@@ -19,7 +19,12 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
+        GIDSignIn.sharedInstance().signInSilently()
         GIDSignIn.sharedInstance().uiDelegate = self
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
         refreshInterface()
     }
     
@@ -29,9 +34,9 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
     }
     
     func refreshInterface() {
-        
+        print("refreshing interface")
         if GIDSignIn.sharedInstance().currentUser != nil {
-            
+  
             logOutBtn.isHidden = false
             signInBtn.isHidden = true
             
@@ -58,6 +63,10 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
                 if error == nil {
                 
                     print("PAT: User authenticated with Firebase")
+                    if let user = user {
+                       KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                       self.performSegue(withIdentifier: "goToFeed", sender: nil)
+                    }
                     
                 } else {
                     
@@ -69,6 +78,10 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
                         } else {
                             
                             print("User account created")
+                            if let user = user {
+                                KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                                self.performSegue(withIdentifier: "goToFeed", sender: nil)
+                            }
                         }
                     }
                 }

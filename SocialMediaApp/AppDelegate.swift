@@ -14,10 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     var signInCallback: (()->())?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         var configureError: NSError?
+        
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google Services: \(configureError)")
         FIRApp.configure()
@@ -29,10 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if(error == nil) {
+            
             print("Signing in...")
+            
             let authentication = user.authentication
             let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
-            FIRAuth.auth()?.signIn(with: credential) { (user, error) in }
+            
+            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+                
+                if let user = user {
+                    KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                    self.window?.rootViewController?.performSegue(withIdentifier: "goToFeed", sender: nil)
+                }
+            }
             
         } else {
             print("\(error.localizedDescription)")

@@ -98,8 +98,8 @@
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Light" family="Roboto Condensed" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-zL-KDH" customClass="FancyButton" customModule="SocialMediaApp" customModuleProvider="target">
-                                <rect key="frame" x="36" y="295" width="248" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-zL-KDH" customClass="FancyButton" customModule="SocialMediaApp" customModuleProvider="target">
+                                <rect key="frame" x="36" y="293" width="248" height="35"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NuP-CA-4d4"/>
@@ -168,11 +168,30 @@
                         <outlet property="logOutBtn" destination="Yyz-jl-j5m" id="p27-ly-0W1"/>
                         <outlet property="passwordText" destination="P0d-NU-ChB" id="ibK-bQ-FxO"/>
                         <outlet property="signInBtn" destination="P3i-UV-vvg" id="GYc-ye-5Bj"/>
+                        <segue destination="fwo-nH-ivL" kind="show" identifier="goToFeed" id="C07-PB-C7F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.75" y="34.859154929577464"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="DyS-Ti-sS0">
+            <objects>
+                <viewController id="fwo-nH-ivL" customClass="FeedVC" customModule="SocialMediaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M81-nI-4mO"/>
+                        <viewControllerLayoutGuide type="bottom" id="HgJ-yc-2Vp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zuJ-kg-xWE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kn-Y6-lNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="38"/>
         </scene>
     </scenes>
 </document>
