@@ -20,22 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google Services: \(configureError)")
-        
+        FIRApp.configure()
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        //FIRApp.configure()
         return true
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if(error == nil) {
-            
-            let userID = user.userID
-            let idToken = user.authentication.idToken
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
+            print("Signing in...")
+            let authentication = user.authentication
+            let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
+            FIRAuth.auth()?.signIn(with: credential) { (user, error) in }
             
         } else {
             print("\(error.localizedDescription)")

@@ -102,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				01F0BBF11DD5CFD8008A1462 /* SignInVC.swift */,
+				01F0BBEF1DD5CFD8008A1462 /* AppDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -113,7 +114,6 @@
 				01F0BBF61DD5CFD8008A1462 /* Assets.xcassets */,
 				01F0BC011DD5D02B008A1462 /* GoogleService-Info.plist */,
 				01F0BBF81DD5CFD8008A1462 /* LaunchScreen.storyboard */,
-				01F0BBEF1DD5CFD8008A1462 /* AppDelegate.swift */,
 				01F0BBFB1DD5CFD8008A1462 /* Info.plist */,
 			);
 			name = Resources;
@@ -187,8 +187,14 @@
 				TargetAttributes = {
 					01F0BBEB1DD5CFD8008A1462 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = EH8PU9789P;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -409,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = EH8PU9789P;
 				INFOPLIST_FILE = SocialMediaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickgross.SocialMediaApp;
@@ -425,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = EH8PU9789P;
 				INFOPLIST_FILE = SocialMediaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickgross.SocialMediaApp;
