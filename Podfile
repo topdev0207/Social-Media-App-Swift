@@ -10,5 +10,6 @@ target 'SocialMediaApp' do
   pod ‘Firebase/Storage'
   pod ‘Firebase/Auth’
   pod ‘Firebase/Database’
+  pod ‘Google/SignIn’
 
 end

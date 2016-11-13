@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXu-DL-kth" customClass="FancyView" customModule="SocialMediaApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="-10" width="320" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sozializing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn1-6m-07s">
                                         <rect key="frame" x="8" y="8" width="304" height="134"/>
@@ -53,7 +53,7 @@
                                 <rect key="frame" x="0.0" y="493" width="320" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before account will be created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-Zk-fFG">
-                                        <rect key="frame" x="8" y="12.5" width="304" height="50"/>
+                                        <rect key="frame" x="8" y="13" width="304" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="010-rN-LLN"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="lpY-4z-nqA"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-fm-ffF">
-                                <rect key="frame" x="8" y="158" width="304" height="25"/>
+                                <rect key="frame" x="8" y="148" width="304" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="4sk-AR-1a2"/>
                                 </constraints>
@@ -80,17 +80,8 @@
                                 <color key="textColor" white="0.0" alpha="0.7032320205479452" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhv-dt-lZ7" customClass="RoundButton" customModule="SocialMediaApp" customModuleProvider="target">
-                                <rect key="frame" x="120" y="203" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.25490196078431371" green="0.36078431372549019" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="4Ih-n5-Xm7"/>
-                                    <constraint firstAttribute="height" constant="80" id="SuP-5j-kXF"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="f"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-9a-szI" customClass="FancyField" customModule="SocialMediaApp" customModuleProvider="target">
-                                <rect key="frame" x="36" y="303" width="248" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-9a-szI" customClass="FancyField" customModule="SocialMediaApp" customModuleProvider="target">
+                                <rect key="frame" x="36" y="215" width="248" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tca-rX-fGK"/>
                                 </constraints>
@@ -98,8 +89,8 @@
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Light" family="Roboto Condensed" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0d-NU-ChB" customClass="FancyField" customModule="SocialMediaApp" customModuleProvider="target">
-                                <rect key="frame" x="36" y="343" width="248" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0d-NU-ChB" customClass="FancyField" customModule="SocialMediaApp" customModuleProvider="target">
+                                <rect key="frame" x="36" y="255" width="248" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WMH-v9-6B3"/>
                                 </constraints>
@@ -107,16 +98,37 @@
                                 <fontDescription key="fontDescription" name="RobotoCondensed-Light" family="Roboto Condensed" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-zL-KDH" customClass="FancyButton" customModule="SocialMediaApp" customModuleProvider="target">
-                                <rect key="frame" x="36" y="383" width="248" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-zL-KDH" customClass="FancyButton" customModule="SocialMediaApp" customModuleProvider="target">
+                                <rect key="frame" x="36" y="295" width="248" height="35"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NuP-CA-4d4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="29"/>
-                                <state key="normal" title="Sign In">
+                                <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="15"/>
+                                <state key="normal" title="          Sign in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3i-UV-vvg" customClass="GIDSignInButton">
+                                <rect key="frame" x="36" y="368" width="248" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EEV-fo-ub5"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyz-jl-j5m" customClass="FancyButton" customModule="SocialMediaApp" customModuleProvider="target">
+                                <rect key="frame" x="36" y="450" width="248" height="35"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.17254901959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="pYy-Ux-gIj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="15"/>
+                                <state key="normal" title="          Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4DO-dO-uEZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,32 +136,40 @@
                             <constraint firstAttribute="trailingMargin" secondItem="jQn-zL-KDH" secondAttribute="trailing" constant="20" id="1qZ-9K-M4o"/>
                             <constraint firstItem="jQn-zL-KDH" firstAttribute="top" secondItem="P0d-NU-ChB" secondAttribute="bottom" constant="10" id="2d7-gS-STs"/>
                             <constraint firstItem="hBf-9a-szI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3PF-io-zA4"/>
-                            <constraint firstItem="hBf-9a-szI" firstAttribute="top" secondItem="fhv-dt-lZ7" secondAttribute="bottom" constant="20" id="CzZ-sj-xr9"/>
+                            <constraint firstItem="Yyz-jl-j5m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3Xj-xb-nJa"/>
+                            <constraint firstItem="P3i-UV-vvg" firstAttribute="top" secondItem="jQn-zL-KDH" secondAttribute="bottom" constant="40" id="4eM-cY-fxm"/>
+                            <constraint firstItem="Yyz-jl-j5m" firstAttribute="top" secondItem="P3i-UV-vvg" secondAttribute="bottom" constant="20" id="8wO-hR-BPJ"/>
+                            <constraint firstItem="2sw-AS-Iff" firstAttribute="top" secondItem="Yyz-jl-j5m" secondAttribute="bottom" constant="20" id="9eh-7X-4vK"/>
+                            <constraint firstItem="P3i-UV-vvg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Cje-Is-64F"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2sw-AS-Iff" secondAttribute="bottom" id="Do9-cY-uOI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P3i-UV-vvg" secondAttribute="trailing" constant="20" id="HLM-Cu-QP9"/>
                             <constraint firstItem="IRF-fm-ffF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="J3u-6Z-SSD"/>
+                            <constraint firstItem="hBf-9a-szI" firstAttribute="top" secondItem="IRF-fm-ffF" secondAttribute="bottom" constant="40" id="KHY-eK-WRd"/>
                             <constraint firstItem="P0d-NU-ChB" firstAttribute="top" secondItem="hBf-9a-szI" secondAttribute="bottom" constant="10" id="Mt6-Gf-Dky"/>
                             <constraint firstItem="P0d-NU-ChB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Nbz-Zx-vDb"/>
                             <constraint firstItem="zXu-DL-kth" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TCB-MZ-9Uu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P0d-NU-ChB" secondAttribute="trailing" constant="20" id="VPc-bz-vX6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hBf-9a-szI" secondAttribute="trailing" constant="20" id="Xr8-sa-W3B"/>
                             <constraint firstItem="2sw-AS-Iff" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bWl-6B-vCe"/>
-                            <constraint firstItem="fhv-dt-lZ7" firstAttribute="top" secondItem="IRF-fm-ffF" secondAttribute="bottom" constant="20" id="cUu-hW-7BI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yyz-jl-j5m" secondAttribute="trailing" constant="20" id="gZR-K7-wzr"/>
                             <constraint firstAttribute="trailing" secondItem="zXu-DL-kth" secondAttribute="trailing" id="hRQ-Pa-d3K"/>
                             <constraint firstAttribute="trailing" secondItem="2sw-AS-Iff" secondAttribute="trailing" id="mMC-61-SJz"/>
-                            <constraint firstItem="fhv-dt-lZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mnP-Zk-1Hk"/>
                             <constraint firstItem="zXu-DL-kth" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pAO-vG-NI4"/>
                             <constraint firstItem="jQn-zL-KDH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="pyJ-Xr-kdS"/>
                             <constraint firstItem="IRF-fm-ffF" firstAttribute="top" secondItem="zXu-DL-kth" secondAttribute="bottom" constant="8" id="sht-Aw-U6D"/>
                             <constraint firstAttribute="trailing" secondItem="IRF-fm-ffF" secondAttribute="trailing" constant="8" id="yO9-Ki-g9e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="hBf-9a-szI" id="o9d-lF-RUa"/>
+                        <outlet property="logOutBtn" destination="Yyz-jl-j5m" id="p27-ly-0W1"/>
+                        <outlet property="passwordText" destination="P0d-NU-ChB" id="ibK-bQ-FxO"/>
+                        <outlet property="signInBtn" destination="P3i-UV-vvg" id="GYc-ye-5Bj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.75" y="34.859154929577464"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="f" width="352" height="328"/>
-    </resources>
 </document>
