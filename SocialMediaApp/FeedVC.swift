@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedVC: UIViewController {
 
@@ -14,5 +15,16 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    @IBAction func signOut(_ sender: Any) {
+        
+        KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+
+        try! FIRAuth.auth()?.signOut()
+        
+        GIDSignIn.sharedInstance().disconnect()
+        print("Sign out")
+        performSegue(withIdentifier: "goToSignIn", sender: nil)
+        
     }
 }

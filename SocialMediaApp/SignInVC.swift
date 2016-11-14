@@ -13,8 +13,8 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var emailText: FancyField!
     @IBOutlet weak var passwordText: FancyField!
-    @IBOutlet weak var logOutBtn: FancyButton!
     @IBOutlet weak var signInBtn: GIDSignInButton!
+    
         
     override func viewDidLoad() {
         
@@ -22,36 +22,14 @@ class SignInVC: UIViewController, GIDSignInUIDelegate {
 
         GIDSignIn.sharedInstance().signInSilently()
         GIDSignIn.sharedInstance().uiDelegate = self
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            performSegue(withIdentifier: "goToFeed", sender: nil)
-        }
-        refreshInterface()
-    }
+        
+}
     
     override func viewDidAppear(_ animated: Bool) {
         
-        refreshInterface()
-    }
-    
-    func refreshInterface() {
-        print("refreshing interface")
-        if GIDSignIn.sharedInstance().currentUser != nil {
-  
-            logOutBtn.isHidden = false
-            signInBtn.isHidden = true
-            
-        } else {
-            
-            print("There is no user")
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
         }
-    }
-    
-    @IBAction func logOutPressed(_ sender: Any) {
-        
-        print("Logged out...")
-        GIDSignIn.sharedInstance().signOut()
-        logOutBtn.isHidden = true
-        signInBtn.isHidden = false
     }
     
     @IBAction func emailSignIn(_ sender: Any) {
