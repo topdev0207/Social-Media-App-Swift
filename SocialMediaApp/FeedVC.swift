@@ -9,19 +9,28 @@
 import UIKit
 import Firebase
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageAdd: UIImageView!
     
     var posts: [Post] = []
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
     
         DataServices.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
@@ -48,16 +57,23 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell {
-            cell.capture.text = posts[indexPath.row].caption
-            cell.likesLbl.text = "Likes: \(posts[indexPath.row].likes)"
-            if let url = NSURL(string: posts[indexPath.row].imageUrl) {
-                if let data = NSData(contentsOf: url as URL) {
-                    cell.postImg.image = UIImage(data: data as Data)
-                }
-            }
+            cell.configureCell(post: posts[indexPath.row])
+            return cell
+            
+        } else {
+        
+        return PostCell()
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            
+            imageAdd.image = image
         }
         
-        return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func signOut(_ sender: Any) {
@@ -70,4 +86,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print("Sign out")
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
+    
+    @IBAction func imagePressed(_ sender: Any) {
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
 }

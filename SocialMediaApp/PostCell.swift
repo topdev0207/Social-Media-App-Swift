@@ -19,4 +19,27 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()        
     }
+    
+    func configureCell(post: Post) {
+        
+        self.capture.text = post.caption
+        self.likesLbl.text = "Likes: \(post.likes)"
+        downloadImage(imageUrl: post.imageUrl)
+    }
+    
+    func downloadImage(imageUrl: String) {
+        
+        URLSession.shared.dataTask(with: NSURL(string: imageUrl)! as URL, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print("\(error)")
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                self.postImg.image = image
+            })
+            
+        }).resume()
+    }
 }
