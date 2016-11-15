@@ -14,9 +14,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     @IBOutlet weak var emailText: FancyField!
     @IBOutlet weak var passwordText: FancyField!
     @IBOutlet weak var signInBtn: GIDSignInButton!
-    
-    var signInCallback: (()->())?
-    
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -30,6 +28,8 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().signInSilently()
         GIDSignIn.sharedInstance().uiDelegate = self
     }
+    
+    //*** GOOGLE SIGN IN ***
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 
@@ -51,10 +51,15 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         }
     }
     
+    //*** GOOGLE SIGN OUT ***
+    
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
     }
+    
+    //*** EMAIL SIGN IN ***
+
 
     @IBAction func emailSignIn(_ sender: Any) {
         

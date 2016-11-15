@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0112E7C51DDA6160000BEB08 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112E7C41DDA6160000BEB08 /* DataServices.swift */; };
+		0112E7C71DDB9252000BEB08 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112E7C61DDB9252000BEB08 /* Post.swift */; };
 		01F0BBF01DD5CFD8008A1462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F0BBEF1DD5CFD8008A1462 /* AppDelegate.swift */; };
 		01F0BBF21DD5CFD8008A1462 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F0BBF11DD5CFD8008A1462 /* SignInVC.swift */; };
 		01F0BBF51DD5CFD8008A1462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F0BBF31DD5CFD8008A1462 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		0112E7C41DDA6160000BEB08 /* DataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		0112E7C61DDB9252000BEB08 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		01F0BBEC1DD5CFD8008A1462 /* SocialMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F0BBEF1DD5CFD8008A1462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F0BBF11DD5CFD8008A1462 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		01F0BC061DD5D5DF008A1462 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0112E7C61DDB9252000BEB08 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				01F0BC111DD70AF0008A1462 /* FancyField.swift in Sources */,
 				01F0BC211DD8BFDA008A1462 /* FeedVC.swift in Sources */,
 				01F0BBF21DD5CFD8008A1462 /* SignInVC.swift in Sources */,
+				0112E7C71DDB9252000BEB08 /* Post.swift in Sources */,
 				01F0BC0F1DD62DCE008A1462 /* RoundButton.swift in Sources */,
 				01F0BC131DD7125D008A1462 /* FancyButton.swift in Sources */,
 				01F0BBF01DD5CFD8008A1462 /* AppDelegate.swift in Sources */,
