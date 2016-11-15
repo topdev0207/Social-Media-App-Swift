@@ -245,19 +245,19 @@
                                             <constraint firstAttribute="trailing" secondItem="C5C-TJ-7Iw" secondAttribute="trailing" constant="8" id="kMR-WI-yVR"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="358" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IcF-Ia-ymI">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="417" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IcF-Ia-ymI">
                                         <rect key="frame" x="0.0" y="162" width="375" height="505"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="358" id="TQt-Cc-ZG9" customClass="PostCell" customModule="SocialMediaApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="358"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="417" id="TQt-Cc-ZG9" customClass="PostCell" customModule="SocialMediaApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="417"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TQt-Cc-ZG9" id="fLk-7s-z7u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="358"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="417"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKc-az-jFi" customClass="FancyView" customModule="SocialMediaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="16" width="343" height="381"/>
+                                                            <rect key="frame" x="16" y="16" width="343" height="401"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="6Fk-Gt-CDd" customClass="CircleImage" customModule="SocialMediaApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
@@ -270,18 +270,9 @@
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </imageView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-9R-B3Y">
-                                                                    <rect key="frame" x="0.0" y="57" width="343" height="150"/>
+                                                                    <rect key="frame" x="0.0" y="57" width="343" height="203"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAB-d9-Uf8">
-                                                                    <rect key="frame" x="0.0" y="215" width="335" height="89"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <string key="text">Der Brüllaffe ist einer der Wenigen, die es noch nicht geschafft haben sich zu sozialisieren.
-Er brüllt einfach kontinuierlich immer weiter bis er heiser wird.</string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brüllaffe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-p7-k51">
                                                                     <rect key="frame" x="92" y="0.0" width="158" height="49"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -290,12 +281,21 @@ Er brüllt einfach kontinuierlich immer weiter bis er heiser wird.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes: 8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-h2-7La">
-                                                                    <rect key="frame" x="-16" y="312" width="375" height="28"/>
+                                                                    <rect key="frame" x="-16" y="365" width="375" height="28"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="RobotoCondensed-Light" family="Roboto Condensed" pointSize="16"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAB-d9-Uf8">
+                                                                    <rect key="frame" x="0.0" y="268" width="335" height="99"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <string key="text">Der Brüllaffe ist einer der Wenigen, die es noch nicht geschafft haben sich zu sozialisieren.
+Er brüllt einfach kontinuierlich immer weiter bis er heiser wird.</string>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
