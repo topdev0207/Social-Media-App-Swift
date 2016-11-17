@@ -13,6 +13,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: UIImageView!
+    @IBOutlet weak var captionField: FancyField!
     
     var posts: [Post] = []
     var imagePicker: UIImagePickerController!
@@ -100,5 +101,40 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBAction func postPressed(_ sender: Any) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            
+            print("Caption Field empty")
+            return
+        }
+        
+        guard let img = imageAdd.image else {
+            
+            print("Please select an image")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataServices.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+             
+                if error != nil {
+                    
+                    print("Upload of picture failed!")
+                } else {
+                    
+                    let downloadUrl = metadata?.downloadURL()?.absoluteString
+                }
+                
+            }
+        }
+    }
+    
     
 }

@@ -232,6 +232,9 @@
                                                     <constraint firstAttribute="width" constant="49" id="mJ0-oR-I4S"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postPressed:" destination="fwo-nH-ivL" eventType="touchUpInside" id="YcG-uk-T6g"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -345,6 +348,7 @@ Er brüllt einfach kontinuierlich immer weiter bis er heiser wird.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captionField" destination="Q1x-aI-O3f" id="Df0-Gu-A9a"/>
                         <outlet property="imageAdd" destination="t7u-xK-Ivv" id="Gma-nl-lkv"/>
                         <outlet property="tableView" destination="IcF-Ia-ymI" id="fLN-HH-a0I"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="ixs-Ff-Sdf"/>
